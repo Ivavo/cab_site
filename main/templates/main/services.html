@@ -1,0 +1,16 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Послуги
+{% endblock %}
+
+{% block content %}
+<h3 align="right"> <strong>Послуги</strong> </h3>
+{% for el in service %}
+    <div class="content-main mt-2">
+        <div><h3>{{ el.name}}. </h3><small>Ціна: {{ el.price }}</small></div>
+        <div class="alert alert-success"><p>{{ el.description }}</p></div>
+    </div>
+    {% endfor %}
+
+{% endblock %}

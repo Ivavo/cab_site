@@ -1,0 +1,24 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Запис
+{% endblock %}
+
+{% block content %}
+<div class = "cover-container d-flex w-50 h-100 p-3 mx-auto flex-column ">
+    <h2 align="right">Сторіка запису</h2>
+    <form method="post">
+        <input type="text" placeholder="ПІБ" class="form-control "><br>
+        <input type="tel" placeholder="Номер телефону" class="form-control"><br>
+        <select multiple class="form-control"> {% for el in procedures %}
+            <option> {{ el.name }} - {{ el.price }} hrn </option>
+            {% endfor %}
+        </select><br>
+        <br>
+        <input type="date" data-date-format="DD MMMM" value="current" class="form-control" ><br>
+        <input type="time" class="form-control" min="10.00" max="17.00"><br>
+        <button type="submit" class="btn btn-success">Записатись</button>
+    </form>
+</div>
+{% endblock %}
+
